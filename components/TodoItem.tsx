@@ -19,6 +19,7 @@ export interface TodoItemProps {
   id: string;
   text: string;
   completed: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any; // required for Reorder.Item
 }
 

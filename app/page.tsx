@@ -7,10 +7,13 @@ import { redirect } from "next/navigation";
 export default async function Home({
   searchParams,
 }: {
-  searchParams: Record<string, string | string[] | undefined>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchParams: any;
 }) {
   // Get user id from cookie/JWT
   const userId = await getCurrentUserId();
+  console.log(userId);
+
   if (!userId) {
     return redirect("/login");
   }
@@ -21,7 +24,9 @@ export default async function Home({
   const filter = (searchParams.filter as string) || "all";
 
   // Build Prisma filter (user-specific)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const where: any = { userId }; // Always filter by userId
+  console.log("Where filter:", where);
   if (filter === "active") where.completed = false;
   if (filter === "completed") where.completed = true;
 
