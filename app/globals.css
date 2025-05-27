@@ -10,6 +10,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Base theme colors */
+  --color-background: #ebf5fb; /* Lightest Blue */
+  --color-surface: #d6eaf8; /* Panel Background */
+  --color-accent: #aed6f1; /* Soft Border / Task BG */
+  --color-focus: #5dade2; /* Input Border / Highlight */
+  --color-primary: #2471a3; /* Buttons / Titles */
+
+  /* Typography */
+  --color-foreground: #1e293b; /* Slate-800 for readability */
 }
 
 @media (prefers-color-scheme: dark) {
